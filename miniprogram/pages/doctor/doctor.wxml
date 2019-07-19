@@ -1,0 +1,92 @@
+<view class="backgroundColor"></view>
+
+<view class="doctor-info row-box">
+
+  <image class="doctor-img" src="/images/avatar_1.jpg"></image>
+  <view class="img-right">
+    <text class="doctor-name">{{name}}<text class="iconfont icon-{{sex == '女' ? 'nv' : 'nan' }}yisheng-mian"></text>
+    </text>
+    <text class="doctor-tag">{{tags}}主任医师</text>
+  </view>
+
+  <view class="doctor-introduce {{introduce ? 'focus' : ''}}">
+    <text class="introduce-tag">简介:</text>
+    <text class="introduce-content">{{name}}医生是我院{{tags}}的主任医师,其技术精湛，深受广大患者信赖！</text>
+  </view>
+
+</view>
+
+
+<view class="muen row-box">
+
+  <view class='muen-list' bindtap="showContent">
+    <text class="{{ tag.qrcode ? 'focus' : '' }}" data-tag="qrcode">二维码</text>
+    <text class="{{ tag.consulting ? 'focus' : '' }}" data-tag="consulting">咨询</text>
+    <text class="{{ tag.make ? 'focus' : '' }}" data-tag="make">预约</text>
+  </view>
+
+  <view class='muen-content'>
+
+    <view wx:if="{{tag.qrcode}}" class="page">
+      <image src='/images/yn.jpg' class='qrcode'></image>
+    </view>
+
+    <!-- 咨询 -->
+    <view wx:if="{{tag.consulting}}" class="page">
+
+      <view class="{{tag.consulting.page1 ? '' : 'focus'}}">
+        <text class="center-text">欢迎使用咨询服务，我将利用我的空余时间，</text>
+        <text class="center-text">尽快为您答疑解惑！</text>
+        <text class="button" bindtap="switchPage" data-page="tag.consulting.page1">咨询</text>
+      </view>
+
+      <view class="{{tag.consulting.page1 ? 'focus' : ''}}">
+
+        <form bindsubmit="consulting">
+          <view class="con-list">
+            <text>咨询者:</text>
+            <view class="con-right">
+              <picker range="{{family}}" value="{{focusFamily}}" bindchange="con_picker">
+                {{
+                  familyList[focusFamily].patientname + " "
+                  + familyList[focusFamily].sex + " "
+                  + familyList[focusFamily].age
+                }}
+                <icon class="iconfont icon-fangxiangyou"></icon>
+              </picker>
+            </view>
+          </view>
+
+          <view class="con-list">
+            <text>哪不舒服:</text>
+            <textarea wx:if="{{tag.consulting.page1}}" placeholder='请准确的描述你的症状（问题），比如：哪里不舒服，症状持续时间，是否曾接受治疗，效果如何。病情描述越准确，医生对你的帮助越大。' name="content" auto-height></textarea>
+            <text class="ps4">请至少输入4个字符</text>
+          </view>
+
+          <text class="ps">＊为保护您的隐私，请不要输入微信号、住址等信息。</text>
+
+          <button form-type='submit'>提交</button>
+        </form>
+      </view>
+
+    </view>
+
+
+    <view wx:if="{{tag.make}}" class="page">
+
+      <view class="{{tag.make.page1 ? '' : 'focus'}}">
+        <text class="center-text">欢迎使用预约服务，此服务将节省您排队挂号时间！</text>
+        <text class="button" bindtap="switchPage" data-page="tag.make.page1">预约</text>
+      </view>
+
+      <view class="{{tag.make.page1 ? 'focus' : ''}}">
+        <text class="center-text">预约界面</text>
+      </view>
+
+    </view>
+
+  </view>
+
+</view>
+
+<msg data="{{toast}}"></msg>

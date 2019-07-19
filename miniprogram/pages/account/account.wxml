@@ -1,0 +1,158 @@
+<view class="backgroundColor"></view>
+
+<view class="account row-box">
+
+  <image src="{{userInfo.avatarUrl}}"></image>
+
+  <view>
+    <text class="nickName">{{
+      userInfo.bind_account.patientname ?
+      userInfo.bind_account.patientname :
+      userInfo.bind_account.name ?
+      userInfo.bind_account.name :
+      userInfo.nickName ?
+      userInfo.nickName :
+      '点击授权'
+    }}</text>
+    <text wx:if="{{doctor}}">医生代码: {{ userInfo.bind_account.ysdm }}</text>
+    <block wx:else>
+      <text wx:if="{{userInfo.bind_account.zxyy_id }}">病号: {{ userInfo.bind_account.zxyy_id }}</text>
+      <text wx:else class="account-error">{{
+        userInfo.bind_account.patientname ? '未上传身份证' : '点击绑定主账号'
+      }}</text>
+    </block>
+
+  </view>
+
+  <button class="get-user-info" open-type="getUserInfo" bindgetuserinfo="settingAccount">s</button>
+
+</view>
+
+
+<!-- 四格分栏 -->
+<!-- <view class="row-box clearfix four-list-icon"> -->
+
+  <!-- 病人 -->
+  <!-- <block wx:if="{{!doctor}}">
+
+    <view bindtap="navgiate" data-page="askList/askList?type=PatAlive" data-pro="put">
+      <icon class="iconfont icon-xiaoxi color5"></icon>
+      <text>待咨询</text>
+    </view>
+    <view bindtap="navgiate" data-page="askList/askList?type=PatClose" data-pro="put">
+      <icon class="iconfont icon-xiaoxi color4"></icon>
+      <text>已结束</text>
+    </view>
+
+    <view bindtap="navgiate" data-page="family/family" data-pro="put">
+      <icon class="iconfont icon-chengyuan color7"></icon>
+      <text>家庭成员</text>
+    </view>
+
+  </block> -->
+
+  <!-- 医生 -->
+  <!-- <block wx:else>
+    <view>
+      <view bindtap="navgiate" data-page="askList/askList?type=DocAlive" data-pro="doc">
+        <icon class="iconfont icon-qiyejianchadan color5"></icon>
+        <text>待咨询</text>
+      </view>
+    </view>
+    <view>
+      <view bindtap="navgiate" data-page="askList/askList?type=DocClose" data-pro="doc">
+        <icon class="iconfont icon-chusheng color7"></icon>
+        <text>已完成</text>
+      </view>
+    </view>
+  </block>
+
+</view> -->
+
+
+<!-- 上传身份证 特殊栏 -->
+<view class="row-box row-list clearfix padding-empty" wx:if="{{ userInfo.bind_account.patientname }}">
+
+  <view wx:if="{{ !userInfo.bind_account.zxyy_id }}">
+    <navigator url='../upload/idCard/idcard'>
+      <icon class="iconfont icon-shenfenzhengzheng"></icon>
+      <text>身份证 [上传]</text>
+    </navigator>
+  </view>
+
+</view>
+
+<!-- 医生 病人 通用栏 -->
+<!-- <view class="row-box row-list clearfix">
+
+  <view>
+    <navigator url='../upload/page/page'>
+      <icon class="iconfont icon-zongjie"></icon>
+      <text>预约</text>
+      <icon class="iconfont icon-fangxiangyou"></icon>
+    </navigator>
+  </view>
+
+  <view>
+    <navigator url='../upload/page/page'>
+      <icon class="iconfont icon-chufang"></icon>
+      <text>处方</text>
+      <icon class="iconfont icon-fangxiangyou"></icon>
+    </navigator>
+  </view>
+
+
+  <block wx:if="{{!doctor}}">
+
+    <view>
+      <navigator url='../upload/page/page'>
+        <icon class="iconfont icon-yaodian"></icon>
+        <text>我的药店</text>
+        <icon class="iconfont icon-fangxiangyou"></icon>
+      </navigator>
+    </view>
+
+  </block>
+
+  <view>
+    <navigator url='../upload/page/page'>
+      <icon class="iconfont icon-qiyejianchadan"></icon>
+      <text>检查单</text>
+      <icon class="iconfont icon-fangxiangyou"></icon>
+    </navigator>
+  </view>
+
+</view> -->
+
+<!-- 医生专用栏 -->
+<view wx:if="{{doctor}}" class="row-box row-list clearfix">
+
+  <view>
+    <navigator url='../upload/page/page'>
+      <icon class="iconfont icon-yaodian"></icon>
+      <text>药店分组</text>
+      <icon class="iconfont icon-fangxiangyou"></icon>
+    </navigator>
+  </view>
+
+  <view>
+    <navigator url='../upload/page/page'>
+      <icon class="iconfont icon-yaodian"></icon>
+      <text>诊断分组</text>
+      <icon class="iconfont icon-fangxiangyou"></icon>
+    </navigator>
+  </view>
+
+</view>
+
+<!-- 版本 其他 栏 -->
+<!-- <view class="row-box row-list clearfix">
+
+  <view bindtap="printVersion">
+    <icon class="iconfont icon-banben"></icon>
+    <text>版本号: {{version}}</text>
+  </view> -->
+
+
+
+<msg data="{{toast}}"></msg>

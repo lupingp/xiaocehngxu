@@ -1,0 +1,32 @@
+<navigator url="../pengzizhaopian/pengzizhaopian1">
+  <view class="four-list row-box clearfix">
+    <view class="four-list-tag">
+      <text>中棚</text>
+      <view class="four-list-all">
+        <icon class="iconfont icon-fangxiangyou"></icon>
+      </view>
+    </view>
+  </view>
+</navigator>
+
+<navigator url="../pengzizhaopian/pengzizhaopian2">
+  <view class="four-list row-box clearfix">
+    <view class="four-list-tag">
+      <text>暖棚</text>
+      <view class="four-list-all">
+        <icon class="iconfont icon-fangxiangyou"></icon>
+      </view>
+    </view>
+  </view>
+</navigator>
+
+<navigator url="../pengzizhaopian/pengzizhaopian3">
+  <view class="four-list row-box clearfix">
+    <view class="four-list-tag">
+      <text>大棚</text>
+      <view class="four-list-all">
+        <icon class="iconfont icon-fangxiangyou"></icon>
+      </view>
+    </view>
+  </view>
+</navigator>

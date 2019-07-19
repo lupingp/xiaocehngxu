@@ -1,0 +1,5 @@
+<view>
+  <text space="ensp">公司地址\n</text>
+  <text space="ensp">如需了解,请点击下方链接！\n</text>
+  <navigator url="https://www.11467.com/qiye/35083148.htm">中义红钢结构有限公司</navigator>
+</view>

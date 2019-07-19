@@ -1,0 +1,68 @@
+<!-- <form class="search-box row-box {{searchClass}}" bindsubmit="searchName">
+  <input
+    placeholder="搜索医生"
+    placeholderClass="search-placeholder"
+    name="name"
+    type="text"
+    confirm-type="search"
+    bindconfirm="searchName"
+  ></input>
+  <icon class="iconfont icon-sousuo">
+    <button form-type='submit'>x</button>
+  </icon>
+</form> -->
+<!-- <view class="type-list-tag row-box" wx:if="{{!results[0]}}">按照科室查找</view>
+<view class="type-list-tag row-box" bindtap="clearResults"  wx:else>
+  <button size="mini" type="primary" style="float:left">返回</button>
+  <text>查找结果（{{ results.length }}）</text>
+</view>
+<view class="row-box type-list">
+  <block wx:if="{{!results[0]}}">
+    <view class="type-list-left">
+      <view
+        wx:for="{{all}}"
+        wx:key="key"
+        class="{{index == listSelect ? 'select' : '' }}"
+        data-i="{{index}}"
+        bindtap="unSelect"
+      >
+        <icon class="iconfont icon-{{item.icon}}"></icon>
+        <text>{{item.tag}}</text>
+      </view>
+    </view>
+    
+    <block wx:for="{{all}}" wx:if="{{index == listSelect}}" wx:key="key">
+      <view class="type-list-right" bindtap="search">
+        <view wx:for="{{item.list}}" wx:key="key" data-subdepId="{{item.id}}">{{item.name}}</view>
+      </view>
+    </block>
+  </block>
+
+  <block wx:else>
+
+    <scroll-view class='doctor-scroll' scroll-y>
+    
+      <view
+        class="doctor"
+        wx:for="{{results}}"
+        wx:key="key"
+        bindtap="doctorPage"
+        data-doctor="name={{item.name}}&sex={{item.l_sex}}&id={{item.id}}&tags={{item.tag}}"
+      >
+        <image src="/images/avatar_1.jpg" class="user-icon"></image>
+        <text class="doctor-name">{{item.name}}</text>
+        <text class="doctor-tag">{{item.tag}}</text>
+      </view>
+      
+    </scroll-view>
+
+  </block>
+  
+</view>
+<msg data="{{toast}}"></msg> -->
+
+<view>
+  <text>
+    讷河市中义红钢结构有限责任公司办公室地址位于中国重要的以装备制造业为主的重工业基地齐齐哈尔，黑龙江省齐齐哈尔市讷河市六合镇镇直，于2010年03月19日在黑龙江省讷河市工商行政管理局注册成立，注册资本为200万元，在公司发展壮大的9年里，我们始终为客户提供好的产品和技术支持、健全的售后服务，我公司主要经营农机具制造、销售；大棚制造、销售；建材销售、日杂销售。金属结构加工、制造、销售；日杂销售。，我们有好的产品和专业的销售和技术团队，我公司属于齐齐哈尔钢结构、膜结构公司行业，如果您对我公司的产品服务有兴趣，期待您在线留言或者来电咨询
+  </text>
+</view>

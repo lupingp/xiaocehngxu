@@ -1,0 +1,272 @@
+page {
+  max-height: 100vh;
+  overflow: hidden;
+}
+.row-box {
+  width: 100vw;
+  height: 100rpx;
+  padding: 20rpx 0;
+}
+.row-box .user-icon {
+  float: left;
+  margin: 0 20rpx;
+}
+.doc-name {
+  font-size: 1.2rem;
+  color: #333;
+}
+.doc-type {
+  margin-left: 20rpx;
+  font-size: .8rem;
+  color: #ccc;
+}
+.doc-department {
+  display: block;
+  width: clac(100% - 150rpx);
+  font-size: .9rem;
+  color: #777;
+}
+
+
+.msg-box {
+  height: calc(100vh - 225rpx);
+  transition: .5s;
+}
+.msg-show {
+  height: calc(100vh - 300rpx);
+}
+.put-info {
+  width: 90vw;
+  margin: 30rpx auto;
+  padding: 20rpx;
+  color: #555;
+  background-color: #eee;
+  border: 10rpx dashed #ddd;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+}
+.descript {
+  display: block;
+  text-indent: 2rem;
+  color: #888;
+}
+.put-box,
+.doc-box {
+  width: 100vw;
+  margin: 10rpx 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+.doc-box {
+  flex-direction: row-reverse;
+}
+/* 医生 */
+.doctor .doc-box {
+  flex-direction: inherit;
+}
+.doctor .doc-box .doc {
+  margin-right: 30rpx;
+}
+.doctor .put-box {
+  flex-direction: row-reverse;
+}
+.doctor .put-box .put {
+  margin-left: 30rpx;
+}
+.doctor .doc-box .doc::after {
+  right: -27rpx;
+  left: auto;
+  border-color: transparent transparent transparent #53DB95;
+}
+.doctor .put-box .put::after {
+  right: auto;
+  left: -27rpx;
+  border-color: transparent #29CCC1 transparent transparent;
+}
+/* 公用对话 */
+.msg-box .put,
+.doc-box .doc {
+  float: left;
+  position: relative;
+  max-width: 60vw;
+  padding: 20rpx;
+  margin-right: 30rpx;
+  color: #fff;
+  line-height: 1.75;
+  word-wrap: break-word;
+  background-image: linear-gradient(90deg, #29CCC1, #53DB95);
+  border-radius: 20rpx;
+}
+.nick .put,
+.nick .doc {
+  transform-origin: right;
+  animation: 1s .5s msg;
+  animation-fill-mode: forwards;
+  transform: rotateY(90deg);
+}
+@keyframes msg {
+  to {
+    transform: rotateY(0deg);
+  }
+}
+.msg-box .put::after,
+.doc-box .doc::after {
+  content: "";
+  position: absolute;
+  right: -27rpx;
+  top: 0;
+  bottom: 0;
+  height: 0;
+  margin: auto;
+  border-style: solid;
+  border-width: 15rpx;
+  border-color: transparent transparent transparent #53DB95;
+  transform: translateY(50%);
+}
+.put text,
+.doc text {
+  font-size: .7rem;
+  color: #888;
+}
+
+.doc-box .doc {
+  margin-right: 0;
+  margin-left: 30rpx;
+}
+.doc-box .doc::after {
+  right: auto;
+  left: -27rpx;
+  border-color: transparent #29CCC1 transparent transparent;
+}
+.msg-box image {
+  float: right;
+  width: 100rpx;
+  height: 100rpx;
+  margin: 10rpx;
+  border: 1rpx dashed #ccc;
+  border-radius: 10rpx;
+}
+.nick image {
+  animation: .5s icon;
+}
+@keyframes icon {
+  from {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.fix {
+  height: 100rpx;
+}
+
+
+.input-box {
+  width: 100%;
+  /* background-color: #eee; */
+  border-top: 1px solid #ddd;
+}
+.input-box .icon-fangxiangshang {
+  float: left;
+  width: calc(10% - 2rpx);
+  height: 10%;
+  margin: 15rpx 0;
+  text-align: center;
+  color: #999;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  border-radius: 100px;
+  transition: .5s;
+}
+.deg {
+  transform: rotate(180deg)
+}
+.input-box input {
+  float: left;
+  width: 60%;
+  height: 60rpx;
+  padding: 0 .5rem;
+  margin: 15rpx 10rpx;
+  font-size: 1rem;
+  color: #444;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 100px;
+  box-sizing: border-box;
+}
+.input-box button {
+  float: left;
+  width: calc(30% - 40rpx);
+  height: 60rpx;
+  margin: 15rpx 10rpx;
+  line-height: initial;
+  white-space: nowrap;
+  color: #666;
+  background-color: #ddd;
+  border-radius: 100px;
+  border: 1px solid #ccc;
+  outline: 0;
+}
+.tool-box {
+  max-height: 0;
+  width: 100vw;
+  transition: 1s;
+}
+.show {
+  max-height: 10vh;
+}
+.tool {
+  min-height: 2.5rem;
+  white-space: nowrap;
+}
+.tool icon,
+.tool text {
+  padding: 0 20rpx;
+  margin: 0 10rpx;
+  vertical-align: middle;
+  color: #666;
+  background-color: #ddd;
+  border-radius: 100px;
+  border: 1px solid #ccc;
+}
+
+.loading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: .8rem;
+  color: #ccc;
+}
+.loading icon {
+  margin: -10rpx 10rpx 0;
+  font-size: 1rem;
+  vertical-align: middle;
+}
+.date {
+  display: block;
+  font-size: .8rem;
+  text-align: center;
+  color: #ccc;
+}
+.old {
+  display: block;
+  padding: 10rpx 0 30rpx;
+  text-align: center;
+  color: #999;
+  font-size: .8rem;
+}
+.old::after,
+.old::before {
+  content: '';
+  display: inline-block;
+  margin: 0 5vw .3rem;
+  width: calc(40vw - 2.8rem);
+  height: 2rpx;
+  background-color: currentColor;
+}

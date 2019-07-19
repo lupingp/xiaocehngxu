@@ -1,0 +1,84 @@
+.row-box {
+  position: relative;
+  overflow: hidden;
+  padding: 10rpx 30rpx;
+  margin: 20rpx auto;
+  box-sizing: border-box;
+}
+.user-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  margin-right: 20rpx;
+  height: 110rpx;
+  width: 110rpx;
+  border-radius: 50%;
+}
+text {
+  display: inline-block;
+  width: calc(50% - 75rpx);
+}
+
+.docName,
+.descript {
+  margin-left: 130rpx;
+}
+.state,
+.createTime {
+  float: right;
+  font-size: .8rem;
+  text-align: right;
+  color: #999;
+}
+
+.createTime {
+  font-size: .7rem;
+  color: #ccc;
+}
+.docName {
+  font-size: 1.2rem;
+}
+.descript {
+  overflow: hidden;
+  width: calc(100% - 130rpx);
+  text-overflow: ellipsis;
+  text-indent: 1rem;
+  white-space: nowrap;
+  color: #888;
+}
+
+.nick::after,
+.waiting::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70rpx;
+  height: 30rpx;
+  background-color: rgba(0, 95, 0, .6);
+  transform: rotateZ(45deg) translateY(-20rpx) translateX(10rpx)
+}
+.waiting::after {
+  background-color: rgba(214, 86, 0, 0.6);
+}
+
+.end::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .05);
+}
+.not-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #888;
+}
+.not-content text {
+  width: 100%;
+  text-align: center;
+}

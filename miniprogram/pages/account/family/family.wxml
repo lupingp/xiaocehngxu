@@ -1,0 +1,31 @@
+<image src="/images/beta.jpg" class="background" mode="widthFix" />
+<view class="family row-box" bindtap="click">
+
+  <view class="title clearfix">
+    <text class="tag">家庭成员 ( 5 / {{familyList.length}} )</text>
+    <icon wx:if="{{familyList.length < 5}}" class="iconfont icon-add" bindtap='addFamily'></icon>
+  </view>
+
+  <view class='loading' wx:if="{{!familyList.length}}">获取中...</view>
+
+  <view wx:for="{{familyList}}" wx:key="key">
+    <image src="/images/avatar_user_0.png" />
+    <view>
+      <text>姓名:</text>
+      <text>{{item.patientname}}</text>
+    </view>
+    <view>
+      <text>出生:</text>
+      <text>{{item.csrq}}</text>
+    </view>
+    <view>
+      <text>手机号:</text>
+      <text>{{item.phone}}</text>
+    </view>
+    <view class="button-list">
+      <button bindtap="click" data-no="{{item.medical_No}}" wx:if="{{item.isLord == 0}}">删除</button>
+    </view>
+  </view>
+
+</view>
+<msg data="{{toast}}" />

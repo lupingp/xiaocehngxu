@@ -1,0 +1,111 @@
+<image class="background" mode="widthFix" src="../../images/dapeng1.png"></image>
+
+
+
+<view>
+  <!-- <input placeholder="按专家名字搜索" placeholderClass="search-placeholder" bindtap="searchFocus" bindblur="searchBlur" confirm-type="search" bindinput="searchKey"></input>
+  <icon class="iconfont icon-sousuo"></icon> class="search-box row-box {{searchClass}}" -->
+
+  <view class="search-list" wx:if="{{searchDoctor.length}}">
+    <view wx:for="{{searchDoctor}}" wx:key="key" bind="">
+      <navigator url="../search/search?name={{item.name}}">
+        {{item.split[0]}}
+        <text>{{item.key}}</text>{{item.split[1]}}
+      </navigator>
+    </view>
+  </view>
+
+  <view class="search-list" wx:else>
+    <view wx:for="{{searchDoctor}}" wx:key="key" bind="">
+      未搜索到包含此关键词的专家!
+    </view>
+  </view>
+
+</view>
+
+
+
+<view class="consulting-type row-box clearfix">
+
+  <!-- <view>
+    <navigator url="../search/search?expertDoc">
+    <icon class="iconfont icon-zhuanjia"></icon>
+    <text>专家咨询</text>
+    </navigator>
+  </view> -->
+
+  <view>
+    <icon class="iconfont icon-Micon-zixun"></icon>
+    <text class="view01" bindtap="viewClick01">快速咨询</text>
+    <!-- <view class="view01" bindtap="viewClick01" hidden="">{{快速咨询}}</view> -->
+  </view>
+
+</view>
+
+
+
+<view class="four-list row-box clearfix">
+
+  <view class="four-list-tag">
+    <text>基本情况</text>
+    <navigator url="../search/search?name={{item.name}}" class="four-list-all">
+      <text>更多</text>
+      <icon class="iconfont icon-fangxiangyou"></icon>
+    </navigator>
+  </view>
+
+  <view class="four-list-icon">
+    <view>
+      <navigator url="../search/search?tag=简介">
+        <icon class="iconfont icon-pifuke color1"></icon>
+        <text>简介</text>
+      </navigator>   
+    </view>
+    <view>
+        <navigator url="../search/search1?tag=棚子种类">
+        <icon class="iconfont icon-tuina color2"></icon>
+        <text>棚子种类</text>
+      </navigator> 
+    </view>
+      <view>
+        <navigator url="../search/search2?tag=公司地址">
+        <icon class="iconfont icon-guke color3"></icon>
+        <text>公司地址</text>
+      </navigator> 
+    </view>
+      <view>
+        <navigator url="../search/search3?tag=其他">
+        <icon class="iconfont icon-erbihouke color4"></icon>
+        <text>其他</text>
+      </navigator> 
+    </view>
+</view>
+
+
+
+<view class="four-list row-box clearfix">
+
+  <view class="four-list-tag">
+    <text>公司代表人</text>
+    <view class="four-list-all">
+      <text>更多</text>
+      <icon class="iconfont icon-fangxiangyou"></icon>
+    </view>
+  </view>
+
+  <view class="four-list-icon">
+    <view>
+      <image src="/images/avatar_user_0.png"></image>
+      <text>李文义</text>
+    </view>
+    <view>
+      <image src="/images/avatar_user_0.png"></image>
+      <text>李文红</text>
+    </view>
+  </view>
+
+</view>
+
+</view>
+
+<msg data="{{msg}}"></msg>

@@ -1,0 +1,11 @@
+<text>大棚如下\n</text>
+<view>联系电话 ↓\n</view>
+<view class="view01" bindtap="viewClick01">{{phonenum}}</view>
+<view>
+<image src="../../images/dapeng1.png">\n</image>
+<!-- <image class="background" mode="widthFix" src="../../images/dapeng1.png"></image>
+<image class="background" mode="widthFix" src="../../images/dapeng1.png"></image>
+<image class="background" mode="widthFix" src="../../images/dapeng1.png"></image>
+<image class="background" mode="widthFix" src="../../images/dapeng1.png"></image>
+<image class="background" mode="widthFix" src="../../images/dapeng1.png"></image> -->
+</view>
